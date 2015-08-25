@@ -278,6 +278,13 @@ func resourceVSphereVirtualMachineCreate(d *schema.ResourceData, meta interface{
 		}
 	}
 	d.SetId(vm.name)
+	
+	// Initialize the connection info
+	d.SetConnInfo(map[string]string{
+		"type": "ssh",
+		"host": networks[0].ipAddress,
+	})
+
 	log.Printf("[INFO] Created virtual machine: %s", d.Id())
 
 	return resourceVSphereVirtualMachineRead(d, meta)

@@ -537,8 +537,8 @@ func createVMRelocateSpec(rp *object.ResourcePool, ds *object.Datastore, vm *obj
 				Datastore: dsr,
 				DiskBackingInfo: &types.VirtualDiskFlatVer2BackingInfo{
 					DiskMode:        "persistent",
-					ThinProvisioned: types.NewBool(false),
-					EagerlyScrub:    types.NewBool(true),
+					ThinProvisioned: types.NewBool(true),
+					EagerlyScrub:    types.NewBool(false),
 				},
 				DiskId: key,
 			},
